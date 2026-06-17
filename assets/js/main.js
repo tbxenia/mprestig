@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+	Fancybox.bind("[data-fancybox]", {
+		
+	});
+
 	const articlesSlider = new Swiper(".articles__list.swiper", {
 		slidesPerView: 4,
 		slidesPerGroup: 1,
@@ -71,6 +75,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			delay: 5000,
 			disableOnInteraction: false,
 		},*/
+		breakpoints: {
+		   0: {
+			   slidesPerView: 'auto',
+		   },
+		   768: {
+			   slidesPerView: 3,
+		   },
+		   992: {
+			   slidesPerView: 4,
+		   },
+		}
 	});
 
 	gallerySlider.on("slideChange afterInit init", function () {
@@ -81,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		</span> 
 		из 
 		<span class="counter__total">
-			${this.slides.length - 3}
+			${this.snapGrid.length}
 		</span>`;
 	});
 
@@ -111,6 +126,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			slidesPerGroup: 1,
 			freeMode: true,
 			watchSlidesProgress: true,
+			breakpoints: {
+				0: {
+					spaceBetween: 4,
+				},
+				768: {
+					spaceBetween: 11,
+				},
+			}
 		};
 
 		let thumbsT = new Swiper(".gallery-thumbs .swiper-container", thumbsTParams);
@@ -133,27 +156,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		let sliderT = new Swiper(".gallery-slider", sliderTParams);	
 	}
-
-	function t5() {
-		clearSelection();
-		let x =  document.querySelector('.div-5');
-		if(this.classList.contains('active')){
-			this.classList.remove('active')
-		}
-	else{
-		this.classList.add('active')
-	}
-			
-
-	}
-
-	function clearSelection() {
-		if (window.getSelection) {
-		window.getSelection().removeAllRanges();
-		} else { 
-		document.selection.empty();
-		}
-	}
-
-	document.querySelector('.div-5').ondblclick = t5;
 });
