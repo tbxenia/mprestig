@@ -3,6 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
 		
 	});
 
+	if (window.innerWidth <= 767) {
+		const container = document.querySelector('.footer__menu'); 
+		const lists = container.querySelectorAll('ul.only-desktop');
+
+		const combinedList = document.createElement('ul');
+		combinedList.classList.add('mobile-menu');
+
+		lists.forEach(list => {
+		combinedList.append(...list.querySelectorAll('li'));
+		list.remove();
+		});
+
+		container.appendChild(combinedList);
+	}
+
 	const articlesSlider = new Swiper(".articles__list.swiper", {
 		slidesPerView: 4,
 		slidesPerGroup: 1,
