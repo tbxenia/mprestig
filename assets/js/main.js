@@ -143,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	galleries.forEach(sliderBlock => {
 		if (sliderBlock) {
-			console.log(sliderBlock);
 			let thumbsTParams = {
 				spaceBetween: 11,
 				slidesPerView: 4,

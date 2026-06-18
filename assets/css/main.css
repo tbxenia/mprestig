@@ -473,7 +473,8 @@ body {
     z-index: 9;
     left: -20px;
     right: -20px;
-    top: 212px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .slider__prev,
@@ -1062,6 +1063,34 @@ footer:before {
 
 .pagination ul li:hover a svg path:first-child {
 	fill: var(--color-accent-dark);
+}
+
+@media(max-width: 1199px) {
+    .pagination ul li.arrow.--left {
+        margin-right: auto;
+    }
+
+    .pagination ul li.arrow.--right {
+        margin-left: auto;
+    }
+}
+
+@media(max-width: 576px) {
+    .pagination ul li,
+    .pagination ul li a {
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .pagination ul li svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .pagination {
+        padding: 20px 15px 0;
+    }
 }
 
 /* --------------------------------------------- end general --------------------------------------------- */
@@ -1937,6 +1966,11 @@ footer:before {
     width: 539px;
 }
 
+.gallery-thumb .slide-content {
+    display: flex;
+    justify-content: center;
+}
+
 .gallery-advantages .advantages {
     width: calc(100% - 539px - 68px);
 }
@@ -2230,6 +2264,9 @@ footer:before {
     gap: 25px;
     display: flex;
     flex-direction: column;
+}
+
+.gallery-thumb__top {
     position: relative;
 }
 
@@ -2237,6 +2274,7 @@ footer:before {
 	width: 100%;
 	height: auto;
 	overflow: hidden;
+    position: relative;
 }
 
 .slide-content {
@@ -2276,6 +2314,12 @@ footer:before {
 	width: 100%;
 	height: 100%;
     object-fit: cover;
+}
+
+@media(max-width: 1443px) {
+    .gallery-thumb {
+        position: relative;
+    }
 }
 
 .loupe {
@@ -2550,6 +2594,7 @@ footer:before {
     font-size: 16px;
     color: #656565;
     padding: 13px;
+    font-weight: 400;
 }
 
 .form .form__field input[type="text"].error,
@@ -2746,7 +2791,7 @@ footer:before {
 /* Страница "Наши объекты" */
 
 
-.objects {
+.objects__list {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -2881,6 +2926,103 @@ footer:before {
 .object__city-inner::-webkit-scrollbar-thumb {
     background-color: #62A8B0;
     border-radius: 8px;
+}
+
+@media(max-width: 1219px) {
+    .objects__item {
+        gap: 30px;
+    }
+
+    .objects__gallery,
+    .objects__info {
+        width: calc(1/2*100% - (1 - 1/2)*30px);
+    }
+}
+
+@media(max-width: 767px) {
+    .objects__item {
+        flex-direction: column;
+    }
+
+    .objects__gallery,
+    .objects__info {
+        width: 100%;
+    }
+}
+
+@media(max-width: 576px) {
+    .objects__list {
+        gap: 30px;
+    }
+
+    .objects__item {
+        padding: 0 0 27px 0;
+        border: 0;
+        border-bottom: 1px solid #E3E3E3;
+    }
+
+    .objects__item:nth-child(even) .objects__gallery {
+        order: 1;
+    }
+    .objects__item:nth-child(even) .objects__info {
+        order: 2;
+    }
+
+    .objects__select-item {
+        font-size: 14px;
+        padding: 7px 53px;
+        line-height: normal;
+    }
+
+    .objects__select {
+        margin-bottom: 29px;
+    }
+
+    .objects__info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .objects__info-name,
+    .objects__info-text {
+        width: 100%;
+    }
+
+    .objects__info-name {
+        order: 1;
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 15px;
+    }
+
+    .objects__info-text {
+        order: 4;
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 31px;
+    }
+
+    .objects__info-text p {
+        margin-bottom: 18px;
+    }
+
+    .objects__info-city,
+    .objects__info-year {
+        width: 50%;
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .objects__info-city {
+        order: 2;
+        gap: 11px
+    }
+
+    .objects__info-year {
+        order: 3;
+        text-align: right;
+    }
 }
 
 /* Страница "Контакты" */
