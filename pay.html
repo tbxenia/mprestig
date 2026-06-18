@@ -3,10 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>ABOUT</title>
+		<title>Оплата</title>
 		<meta name="robots" content="noindex" />
-		<link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
-		<link rel="stylesheet" href="./assets/css/fancybox.css">
 		<link rel="stylesheet" href="./assets/css/main.css">
 		
 	</head>
@@ -64,23 +62,106 @@
 			</div>
 		</header>
 		<main>
-			<div class="section container content-page">
-				<h1>Готовая верстка страниц</h1>
-				<ul>
-					<li><a href="/mprestig/front-page.html">Главная страница</a></li>
-					<li><a href="/mprestig/about.html">О компании</a></li>
-					<li>Каталог</li>
-					<li>Карточка товара</li>
-					<li>Контакты</li>
-					<li>FAQ</li>
-					<li>Статьи</li>
-					<li>Статья (детальная)</li>
-					<li>Калькулятор</li>
-					<li>Доставка</li>
-					<li><a href="/mprestig/pay.html">Оплата</a></li>
-					<li>Наши объекты</li>
-				</ul>
+			<section class="section container breadcrumbs">
+				<div class="breadcrumbs__item">
+					<a href="/" data-fragment="breacrumb-home">
+					<span property="name">Главная</span>
+					</a>
+					<meta property="position" content="1">
+				</div>
+				<div class="breadcrumbs__item active">
+					<span property="name">Оплата</span>
+					<meta property="position" content="2">
+				</div>
+			</section>
+			<section class="section container content-page">
+				<h1>Оплата</h1>
+			</section>
+			<div class="section container pay">
+				<div class="pay__block pay__options">
+					<div class="pay__title">
+						Мы предлагаем следующие варианты оплаты:
+					</div>
+					<div class="pay__options-list">
+						<div class="pay__options-item">
+							<div class="icon">
+								<img src="./assets/images/icons/icon_pay.svg" alt="Безналичный расчет для юридических лиц">
+							</div>
+							Безналичный расчет для юридических лиц
+						</div>
+						<div class="pay__options-item">
+							<div class="icon">
+								<img src="./assets/images/icons/icon_pay_phone.svg" alt="Безналичный перевод для физических лиц">
+							</div>
+							Безналичный перевод для физических лиц
+						</div>
+					</div>
+					<p>Порядок оплаты заказа уточняйте у личного менеджера.</p>
+				</div>
+				<div class="pay__block pay__details">
+					<div class="pay__title">
+						Реквизиты:
+					</div>
+					<p><b>ИНН:</b> 5406789441, КПП: 540000000</p>
+					<p><b>Адрес:</b> 633104, г. Объ, ул. Омский тракт, 17</p>
+					<p><b>Банк получателя:</b>  ФИЛИАЛ "НОВОСИБИРСКИЙ"  ОАО "АЛЬФА-БАНК" Г. НОВОСИБИРСКБИК 00000000 Сч. №3000000000000000</p>
+					<a href="#" class="pay__details-download">
+						<span>скачать реквизиты</span>
+						<img src="./assets/images/icons/icon_document.svg" alt="скачать реквизиты">
+					</a>
+				</div>
 			</div>
+			<section class="section form">
+				<div class="form__inner">
+					<div class="container form__wrapper">
+						<div class="form__left">
+							<div class="form__title">
+								Оставьте контакты <br>
+								и руководитель проектов <br>
+								с вами свяжется!
+							</div>
+							<div class="form__text">Или позвоните нам по телефону или закажите обратный звонок</div>
+							<div class="form__link"><a href="tel:+73832304580">+7 (383) 230-45-80</a></div>
+						</div>
+						<div class="form__right clip-small">
+							<div class="form__title">
+								Перезвоните мне!
+							</div>
+							<form>
+								<div class="form__field">
+									<label for="username">
+										<input type="text" name="username" placeholder="Ваше имя *">
+									</label>
+								</div>
+								<div class="form__field">
+									<label for="userphone">
+										<input type="tel" name="userphone" placeholder="Ваш телефон *">
+									</label>
+								</div>
+								<div class="form__field">
+									<label for="usermessage">
+										<textarea name="usermessage" placeholder="Комментарий"></textarea>
+									</label>
+								</div>
+								<div class="form__field message">
+									<span class="red">*</span> поле обязательно для заполнения
+								</div>
+								<div class="form__fields row">
+									<div class="form__field">
+										<input type="checkbox" id="agree" name="agree">
+										<label for="agree">
+											Я принимаю условия <a href="#">пользовательского соглашения</a> и даю <a href="#">согласие на обработку персональных данных</a>
+										</label>
+									</div>
+									<div class="form__field">
+										<button class="btn --grey">Отправить</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		<footer>
 			<div class="container footer">
@@ -154,8 +235,6 @@
 			</div>
 		</footer>
 
-		<script src="./assets/js/swiper-bundle.min.js"></script>
-		<script src="./assets/js/fancybox.umd.js"></script>
 		<script src="./assets/js/main.js"></script>
 	</body>
 </html>

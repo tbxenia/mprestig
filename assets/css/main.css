@@ -210,6 +210,24 @@ a {
     --color-blue: #62A8B1;
 }
 
+input,
+textarea {
+    border: 1px solid transparent;
+}
+
+input:focus,
+textarea:focus,
+input:active,
+textarea:active {
+    outline: none;
+    border: 1px solid #000;
+}
+
+
+::placeholder {
+	color: #656565;
+}
+
 body {
 	font-family: 'Manrope';
     font-weight: 500;
@@ -341,7 +359,12 @@ body {
     font-weight: 500;
     font-size: 30px;
     line-height: 42px;
-    margin-bottom: 50px;
+}
+
+@media(max-width: 576px) {
+    .content-page h1 {
+        font-size: 18px;
+    }
 }
 
 
@@ -2217,5 +2240,452 @@ footer:before {
         background-size: 12px;
         bottom: 0;
         left: 0;
+    }
+}
+
+/* Страница "Оплата" */
+
+.pay {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.pay__block {
+    width: calc(1/2*100% - (1 - 1/2)*28px);
+    padding: 32px 25px;
+    border: 1px solid #fff;
+    font-size: 16px;
+}
+
+.pay__block p {
+    margin-bottom: 8px;
+}
+
+.pay__block p b {
+    font-weight: 600;
+}
+
+.pay__block p:last-child {
+    margin-bottom: 0;
+}
+
+.pay__options {
+    border: 1px solid #E3E3E3;
+    padding: 32px 25px;
+}
+
+.pay__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 29px;
+}
+
+.pay__options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 41px;
+}
+
+.pay__options-item {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.pay__options-item .icon {
+    width: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pay__options-item .icon img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pay__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pay__details {
+    position: relative;
+}
+
+.pay__details-download {
+    font-weight: 500;
+    text-decoration: underline;
+    color: #000000;
+    position: relative;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 12px;
+    position: absolute;
+    top: 32px;
+    right: 25px;
+}
+
+.pay__details-download:hover {
+    text-decoration: none;
+}
+
+@media(max-width: 767px) {
+    .pay__block {
+        width: 100%;
+    }
+}
+
+@media(max-width: 576px) {
+    .pay {
+        gap: 0;
+    }
+
+    .pay__block {
+        padding: 24px 20px;
+        font-size: 12px;
+    }
+
+    .pay__details .pay__details-download {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 22px;
+        gap: 23px;
+    }
+
+    .pay__details-download img {
+        order: 1;
+        max-width: 16px;
+        height: auto;
+    }
+
+    .pay__details-download span {
+        order: 2;
+    }
+
+    .pay__options {
+        padding: 16px 20px;
+    }
+
+    .pay__options-item .icon {
+        width: 20px;
+    }
+
+    .pay__title {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 21px;
+    }
+
+    .pay__details .pay__title {
+        margin-bottom: 15px;
+    }
+
+    .pay__options-list {
+        gap: 17px;
+        margin-bottom: 24px;
+    }
+
+    .pay__options-item {
+        gap: 19px;
+    }
+}
+
+.form {
+    background: #fff;
+    padding-top: 16px;
+}
+
+.section.form {
+    padding-bottom: 0;
+}
+
+.form__inner {
+    background: linear-gradient(90deg, #FAFAFA 0%, #EFEFEF 100%);
+    padding-bottom: 30px;
+}
+
+.form .form__wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.form__left {
+    width: calc(100% - 650px - 30px);
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 115px;
+}
+
+.form__left .form__title {
+    font-family: 'Unbounded';
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 48px;
+}
+
+.form__text {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.form__link {
+    font-weight: 700;
+    font-size: 30px;
+    position: relative;
+    padding-left: 43px;
+    width: fit-content;
+}
+
+.form__link:before {
+    background: url('../images/icons/icon_call-red.svg') no-repeat center center;
+    background-size: 100%;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+}
+
+.form__link a {
+    text-decoration: underline;
+}
+
+.form__link a:hover {
+    text-decoration: none;
+}
+
+.form__right {
+    width: 650px;
+    background-color: #717171;
+    background-image: url('../images/banner_bg.png');
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    color: var(--color-white);
+    padding: 30px 25px 12px;
+    margin-top: -16px;
+}
+
+.form__right .form__title {
+    font-family: 'Unbounded';
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 26px;
+}
+
+.form .form__field {
+    margin-bottom: 20px;
+}
+
+.form .form__field input[type="text"],
+.form .form__field input[type="tel"],
+.form .form__field textarea {
+    height: 45px;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    color: #656565;
+    padding: 13px;
+}
+
+.form .form__field input[type="text"].error,
+.form .form__field input[type="tel"].error,
+.form .form__field textarea.error {
+    border: 1px solid var(--color-accent);
+}
+
+.form .form__field textarea {
+    resize: none;
+    height: 90px;
+}
+
+.form__field.message {
+    font-weight: 700;
+    font-size: 12px;
+    text-align: right;
+    margin-top: -10px;
+}
+
+.form__field .red {
+    color: #FF2A00;
+}
+
+.form__field button {
+    width: 240px;
+}
+
+.form__fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+}
+
+.form__fields .form__field {
+    margin-bottom: 0;
+}
+
+.form__field input[type="checkbox"] {
+    opacity: 0;
+	position: absolute;
+    left: -1000px;
+}
+
+.form__field input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 34px;
+	font-size: 12px;
+    line-height: 16px;
+    display: block;
+}
+
+.form__field input[type="checkbox"] + label a {
+	color: var(--color-white);
+	text-decoration: underline;
+}
+
+.form__field input[type="checkbox"] + label a:hover {
+	text-decoration: none;
+}
+
+.form__field input[type="checkbox"] + label::before {
+	content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--color-white);
+    border-radius: 4px;
+	border: 1px solid #C9C9C9;
+}
+
+.form__field input[type="checkbox"].error + label::before {
+	border: 2px solid var(--color-accent);
+}
+
+.form__field input[type="checkbox"]:checked + label::before {
+    background: var(--color-white);
+}
+
+.form__field input[type="checkbox"]:checked + label:after, 
+.form__field input[type="checkbox"]:not(:checked) + label:after {
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.form__field input[type="checkbox"]:checked + label:after {
+	left: 4px;
+    top: 9px;
+    width: 16px;
+    height: 8px;
+    border-radius: 1px;
+    border-left: 4px solid var(--color-accent);
+    border-bottom: 4px solid var(--color-accent);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+@media(max-width: 1239px) {
+    .form__left,
+    .form__right {
+        width: calc(1/2*100% - (1 - 1/2)*30px);
+    }
+
+    .form__left {
+        padding-left: 0;
+    }
+}
+
+@media(max-width: 767px) {
+    .form__left,
+    .form__right {
+        width: 100%;
+    }
+
+    .form__left {
+        gap: 24px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .form__left .form__title {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .form__text {
+        font-size: 14px;
+    }
+
+    .form__link {
+        font-size: 22px;
+    }
+
+    .form__link:before {
+        width: 16px;
+        height: 16px;
+    }
+
+    .form__right {
+        margin-top: 0;
+        padding-inline: 20px;
+    }
+
+    .form .form__wrapper {
+        padding-top: 25px;
+        padding-bottom: 11px;
+    }
+
+    .form__right .form__title {
+        font-size: 18px;
+    }
+
+    .form .form__field input[type="text"],
+    .form .form__field input[type="tel"],
+    .form .form__field textarea {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .form .form__field textarea {
+        height: 80px;
+    }
+
+    .form__fields {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .form .form__field {
+        margin-bottom: 10px;
+    }
+
+    .form__field.message {
+        font-size: 10px;
+        margin-top: 0;
+    }
+
+    .form__field input[type="checkbox"] + label {
+        font-size: 10px;
     }
 }
