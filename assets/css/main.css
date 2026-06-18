@@ -301,6 +301,49 @@ body {
   }
 }
 
+/* форматирование */
+
+.content-page ul {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.content-page ul li {
+    position: relative;
+    padding-left: 30px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.content-page ul li:before {
+    width: 5px;
+    height: 5px;
+    background: #D32300;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    content: '';
+}
+
+.content-page a {
+    color: #D32300;
+    text-decoration: underline;
+}
+
+.content-page a:hover {
+    color: var(--color-black);
+    text-decoration: none;
+}
+
+.content-page h1 {
+    font-family: 'Unbounded';
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 50px;
+}
+
 
 /* <скошенные углы> */
 
