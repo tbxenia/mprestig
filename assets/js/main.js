@@ -1,7 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-	Fancybox.bind("[data-fancybox]", {
-		
-	});
+	const fancyBoxElements = document.querySelectorAll("[data-fancybox]");
+
+	if (fancyBoxElements.length > 0) {
+		Fancybox.bind("[data-fancybox]", {});
+	}
+
+	const faqBlock = document.querySelector('.faq');
+
+	if(faqBlock) {
+		document.querySelectorAll('.faq__item').forEach(faq => {
+			faq.addEventListener('click', () => {
+				const faqItemParent = faq.parentElement;
+
+				const faqAllItems = faqItemParent.querySelectorAll('.faq__item');
+				faqAllItems.forEach(item => {
+					if (item !== faq) {
+						item.classList.remove('active');
+					}
+				});
+				faq.classList.toggle('active');
+			});
+		});
+	}
 
 	if (window.innerWidth <= 767) {
 		const container = document.querySelector('.footer__menu'); 
@@ -18,52 +38,59 @@ document.addEventListener("DOMContentLoaded", () => {
 		container.appendChild(combinedList);
 	}
 
-	const articlesSlider = new Swiper(".articles__list.swiper", {
-		slidesPerView: 4,
-		slidesPerGroup: 1,
-		loop: true,
-		speed: 1200,
-		pagination: false,
-		lazy: {
-			loadPrevNext: true,
-			loadPrevNextAmount: 1,
-			loadOnTransitionStart: true
-		},
-		navigation: {
-			nextEl: '.articles__list .slider__next',
-			prevEl: '.articles__list .slider__prev',
-		},
-		pagination: false,
-		autoplay: {
-			delay: 5000,
-			disableOnInteraction: false,
-		},
-		spaceBetween: 10,
-	});
+	const articlesBlock = document.querySelector('.articles__list');
 
-    const productsSlider = new Swiper(".products__slider.swiper", {
-		slidesPerView: 4,
-		slidesPerGroup: 1,
-		loop: true,
-		speed: 1200,
-		pagination: false,
-		lazy: {
-			loadPrevNext: true,
-			loadPrevNextAmount: 1,
-			loadOnTransitionStart: true
-		},
-		navigation: {
-			nextEl: '.products__nav .slider__next',
-			prevEl: '.products__nav .slider__prev',
-		},
-		pagination: false,
-		/*autoplay: {
-			delay: 5000,
-			disableOnInteraction: false,
-		},*/
-        autoplay: false,
-		spaceBetween: 10,
-	});
+	if(articlesBlock) {
+		const articlesSlider = new Swiper(".articles__list.swiper", {
+			slidesPerView: 4,
+			slidesPerGroup: 1,
+			loop: true,
+			speed: 1200,
+			pagination: false,
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 1,
+				loadOnTransitionStart: true
+			},
+			navigation: {
+				nextEl: '.articles__list .slider__next',
+				prevEl: '.articles__list .slider__prev',
+			},
+			pagination: false,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			spaceBetween: 10,
+		});
+	}
+
+	const productsSliderBlock = document.querySelector('.articles__list');
+	if(productsSliderBlock) {
+		const productsSlider = new Swiper(".products__slider.swiper", {
+			slidesPerView: 4,
+			slidesPerGroup: 1,
+			loop: true,
+			speed: 1200,
+			pagination: false,
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 1,
+				loadOnTransitionStart: true
+			},
+			navigation: {
+				nextEl: '.products__nav .slider__next',
+				prevEl: '.products__nav .slider__prev',
+			},
+			pagination: false,
+			/*autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},*/
+			autoplay: false,
+			spaceBetween: 10,
+		});
+	}
 
 	const gallerySliderInit = document.querySelector('.gallery.swiper');
 
