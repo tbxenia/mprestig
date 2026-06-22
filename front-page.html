@@ -63,14 +63,18 @@
 			</div>
 		</header>
 		<main>
+
 			<div class="section container banner --home">
 				<div class="banner__inner clip-big">
 					<div class="banner__inner-content">
-						<h1 class="banner__inner-title">Сэндвич–панели <br>от производителя <br>в Новосибирске</h1>
+						<div class="banner__inner-title">Сэндвич–панели <br>от производителя <br>в Новосибирске</div>
 						<div class="banner__inner-description">
 							Стеновые и кровельные панели для строительства зданий и складов
 						</div>
 					</div>
+				</div>
+				<div class="banner__video clip-big">
+					<video loop="" muted="muted" id="banner-video" preload="0" poster="./assets/images/banner.png" width="100%" height="auto"> <source src="https://www.metall-prestig.ru/bitrix/images/video-shapka-metallprestiz.mp4" type="video/mp4"> </video>
 				</div>
 				<div class="banner__message clip-small">
 					<p><b>Компания «МЕТАЛЛ ПРЕСТИЖ» занимается производством и продажей сэндвич-панелей, характеризующихся высокими показателями прочности, огнестойкости и надежности.</b></p>
@@ -106,6 +110,9 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="features__img">
+					<img src="./assets/images/features.png" alt="ООО МЕТАЛЛ ПРЕСТИЖ">
 				</div>
 			</div>
 			<section class="section container popular">
@@ -374,6 +381,9 @@
 							</div>
 						</div>
 					</div>
+					<div class="section__more only-mobile">
+						<a href="#">Смотреть каталог</a>
+					</div>
 				</div>
 				<div class="popular__categories">
 					<a href="#" class="category__item">
@@ -381,7 +391,7 @@
 							<img src="./assets/images/popular_cat-1.png" alt="Стеновые сэндвич - панели 80мм">
 						</div>
 						<div class="category__item-title">
-							Стеновые <br>сэндвич - панели <b>80мм</b>
+							<span>Стеновые <br>сэндвич - панели <b>80мм</b></span>
 						</div>
 					</a>
 					<a href="#" class="category__item">
@@ -389,7 +399,7 @@
 							<img src="./assets/images/popular_cat-2.png" alt="Стеновые сэндвич - панели 100мм">
 						</div>
 						<div class="category__item-title">
-							Стеновые <br>сэндвич - панели <b>100мм</b>
+							<span>Стеновые <br>сэндвич - панели <b>100мм</b></span>
 						</div>
 					</a>
 					<a href="#" class="category__item">
@@ -397,7 +407,7 @@
 							<img src="./assets/images/popular_cat-3.png" alt="Стеновые сэндвич - панели 120мм">
 						</div>
 						<div class="category__item-title">
-							Стеновые <br>сэндвич - панели <b>120мм</b>
+							<span>Стеновые <br>сэндвич - панели <b>120мм</b></span>
 						</div>
 					</a>
 					<a href="#" class="category__item">
@@ -405,7 +415,7 @@
 							<img src="./assets/images/popular_cat-4.png" alt="Стеновые сэндвич - панели 150мм">
 						</div>
 						<div class="category__item-title">
-							Стеновые <br>сэндвич - панели <b>150мм</b>
+							<span>Стеновые <br>сэндвич - панели <b>150мм</b></span>
 						</div>
 					</a>
 					<a href="#" class="category__item">
@@ -413,7 +423,7 @@
 							<img src="./assets/images/popular_cat-5.png" alt="Стеновые сэндвич - панели 200мм">
 						</div>
 						<div class="category__item-title">
-							Стеновые <br>сэндвич - панели <b>200мм</b>
+							<span>Стеновые <br>сэндвич - панели <b>200мм</b></span>
 						</div>
 					</a>
 					<a href="#" class="category__item">
@@ -421,7 +431,7 @@
 							<img src="./assets/images/popular_cat-6.png" alt="Минеральная вата ПСМ">
 						</div>
 						<div class="category__item-title">
-							Минеральная вата ПСМ
+							<span>Минеральная вата ПСМ</span>
 						</div>
 					</a>
 				</div>
@@ -502,38 +512,89 @@
 					<h2>Где используется?</h2>
 				</div>
 				<div class="use__list">
-					<div class="use__item" style="background-image: url('./assets/images/use-1.jpg');">
+					<div class="use__item">
+						<div class="use__item-img">
+							<img src="./assets/images/use-1.jpg" alt="Для промышленных зданий">
+						</div>
 						<div class="use__item-title">
 							Для промышленных зданий
 						</div>
 					</div>
-					<div class="use__item" style="background-image: url('./assets/images/use-2.jpg');">
+					<div class="use__item">
+						<div class="use__item-img">
+							<img src="./assets/images/use-2.jpg" alt="Для складов/ангаров">
+						</div>
 						<div class="use__item-title">
 							Для складов&nbsp;/&nbsp;ангаров
 						</div>
 					</div>
-					<div class="use__item" style="background-image: url('./assets/images/use-3.jpg');">
+					<div class="use__item">
+						<div class="use__item-img">
+							<img src="./assets/images/use-3.jpg" alt="Для домов">
+						</div>
 						<div class="use__item-title">
 							Для домов
 						</div>
 					</div>
-					<div class="use__item" style="background-image: url('./assets/images/use-4.jpg');">
+					<div class="use__item">
+						<div class="use__item-img">
+							<img src="./assets/images/use-4.jpg" alt="Для фасада">
+						</div>
 						<div class="use__item-title">
 							Для фасада
 						</div>
 					</div>
-					<div class="use__item" style="background-image: url('./assets/images/use-5.jpg');">
+					<div class="use__item">
+						<div class="use__item-img">
+							<img src="./assets/images/use-5.jpg" alt="Для кровли">
+						</div>
 						<div class="use__item-title">
 							Для кровли
 						</div>
 					</div>
 				</div>
 			</section>
-			<section class="section container objects">
+			<section class="section container objects-home">
 				<div class="section__title">
 					<h2>Наши объекты</h2>
 					<div class="section__more">
 						<a href="#">Все проекты</a>
+					</div>
+				</div>
+				<div class="objects-home__content">
+					<div class="objects-home__img">
+						<img src="./assets/images/object.png" alt="Наши объекты">
+					</div>
+					<div class="objects-home__list">
+						<div class="accordion">
+							<div class="accordion-item active">
+								<div class="accordion-header objects-home__title">Название объекта №1</div>
+								<div class="accordion-content objects-home__text">
+									<div class="objects-home__meta">
+										Санкт-Петербург  |  2023
+									</div>
+									<p><b>Описание работы.</b> Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: убеждённость некоторых оппонентов способствует подготовке и реализации позиций, занимаемых участниками в отношении поставленных задач.</p>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header objects-home__title">Название объекта №2</div>
+								<div class="accordion-content objects-home__text">
+									<div class="objects-home__meta">
+										Санкт-Петербург  |  2023
+									</div>
+									<p><b>Описание работы.</b> Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: убеждённость некоторых оппонентов способствует подготовке и реализации позиций, занимаемых участниками в отношении поставленных задач.</p>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header objects-home__title">Название объекта №3</div>
+								<div class="accordion-content objects-home__text">
+									<div class="objects-home__meta">
+										Санкт-Петербург  |  2023
+									</div>
+									<p><b>Описание работы.</b> Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: убеждённость некоторых оппонентов способствует подготовке и реализации позиций, занимаемых участниками в отношении поставленных задач.</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
