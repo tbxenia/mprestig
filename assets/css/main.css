@@ -2447,6 +2447,10 @@ footer:before {
         font-size: 12px;
     }
 
+    .pay__details p {
+        font-size: 12px;
+    }
+
     .pay__details .pay__details-download {
         position: relative;
         top: auto;
@@ -3031,6 +3035,7 @@ footer:before {
     display: flex;
     gap: 30px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .contacts-page .contacts__block {
@@ -3038,7 +3043,7 @@ footer:before {
 }
 
 .contacts__block .contacts {
-    gap: 65px;
+    gap: 55px;
 }
 
 .contacts__block-title {
@@ -3070,11 +3075,14 @@ footer:before {
 
 .team__item {
     width: calc(1/6*100% - (1 - 1/6)*9px);
+    display: flex;
+    flex-direction: column;
 }
 
 .team__item-img img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .team__info {
@@ -3083,11 +3091,18 @@ footer:before {
     color: var(--color-white);
     text-align: center;
     padding: 20px 15px 32px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .team__info>div {
     z-index: 9;
     position: relative;
+}
+
+.team__info>div:last-child {
+    margin-top: auto;
 }
 
 .team__info:before {
@@ -3163,6 +3178,43 @@ footer:before {
     gap: 35px;
 }
 
+
+@media(max-width: 1199px) {
+    .offices__item {
+        width: 50%;
+    }
+
+    .offices__item:nth-child(3n+1),
+    .offices__item:nth-child(3n+3),
+    .offices__item:nth-last-child(n + 4) {
+        border: 0;
+        padding-left: 30px;
+    }
+
+    .offices__item:nth-child(2n+1) {
+        border-right: 1px solid #E5E5E5;
+        padding-left: 0;
+    }
+    .offices__item:nth-child(n+3) {
+        padding-top: 58px;
+    }
+
+    .offices__item:nth-last-child(n + 3) {
+        border-bottom: 1px solid #E5E5E5;
+    }
+}
+
+@media(max-width: 991px) {
+    .contacts-page .contacts__block.contacts__title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contacts-page .contacts__block {
+        width: calc(1/2*100% - (1 - 1/2)*30px);
+    }
+}
+
 @media(min-width: 577px) {
     .contacts-page .pay__details-download {
         top: 0;
@@ -3186,11 +3238,97 @@ footer:before {
     .team__item {
         width: calc(1/3*100% - (1 - 1/3)*9px);
     }
+
+    .contacts-page {
+        flex-direction: column;
+        gap: 27px;
+    }
+
+    .contacts-page .contacts__block.contacts__title,
+    .contacts-page .contacts__block {
+        width: 100%;
+        text-align: left;
+    }
 }
 
 @media(max-width: 576px) {
+    .contacts__block .contacts {
+        gap: 27px;
+    }
+
+    .contacts > div {
+        padding-left: 35px;
+    }
+
+    .contacts__block-title {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .contacts__block-title br {
+        display: none;
+    }
+
+    .contacts__block .contacts__address,
+    .contacts__block .contacts__email {
+        font-size: 14px;
+    }
+
+    .contacts__block .contacts__address {
+        display: flex;
+        gap: 13px;
+    }
+
+    .contacts__block .contacts__address .scheme {
+        font-size: 12px;
+    }
+
+    .contacts__block .contacts__phone {
+        font-size: 16px;
+    }
+
+    .team__info {
+        padding: 18px 10px 32px;
+    }
+
     .team__item {
         width: calc(1/2*100% - (1 - 1/2)*9px);
+    }
+
+    .team__info-post {
+        font-size: 12px;
+        line-height: normal;
+    }
+
+    .offices__item {
+        width: 100% !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid #E5E5E5;
+        padding: 30px 0 !important;
+        gap: 26px;
+    }
+
+    .offices__item:last-child {
+        border-bottom: 0;
+        padding-bottom: 0 !important;
+    }
+
+    .offices__item-title {
+        font-size: 16px;
+    }
+
+    .offices__item .contacts__phone {
+        font-size: 16px;
+    }
+
+    .offices__item .contacts__address,
+    .offices__item .contacts__email {
+        font-size: 14px;
+    }
+
+    .offices__item .contacts {
+        gap: 20px;
     }
 }
 
