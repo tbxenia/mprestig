@@ -2141,6 +2141,10 @@ footer:before {
 
 /* gallery */
 
+.production {
+    padding-bottom: 95px;
+}
+
 .production__item {
     position: relative;
 }
@@ -2183,6 +2187,10 @@ footer:before {
 }
 
 @media(max-width: 576px) {
+    .production {
+        padding-bottom: 40px;
+    }
+
     .mobile__navigation {
         display: flex;
         gap: 15px;
