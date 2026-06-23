@@ -276,4 +276,44 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	}
+	const articleBody = document.getElementById('article');
+
+	if(articleBody) {
+	const headers = Array.from(articleBody.querySelectorAll('*')).filter(
+		el => el.tagName === 'H2' || el.tagName === 'H3'
+	);
+
+	const olList = document.createElement('ol');
+	let currentH2Item = null; 
+
+	headers.forEach(header => {
+		let headerId = header.id;
+		if (!headerId) {
+		headerId = header.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+		header.id = headerId;
+		}
+
+		const li = document.createElement('li');
+
+		const link = document.createElement('a');
+		link.href = `#${headerId}`;
+		link.textContent = header.textContent;
+
+		li.appendChild(link);
+
+		if (header.tagName === 'H2') {
+		olList.appendChild(li);
+		currentH2Item = li;
+		} else if (header.tagName === 'H3' && currentH2Item) {
+		let nestedUl = currentH2Item.querySelector('ul');
+		if (!nestedUl) {
+			nestedUl = document.createElement('ul');
+			currentH2Item.appendChild(nestedUl);
+		}
+		nestedUl.appendChild(li);
+		}
+	});
+
+	document.querySelector('.article__headtitle-nav').appendChild(olList);
+	}
 });
