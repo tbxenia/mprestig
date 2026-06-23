@@ -3097,6 +3097,7 @@ footer:before {
 .form__inner {
     background: linear-gradient(90deg, #FAFAFA 0%, #EFEFEF 100%);
     padding-bottom: 30px;
+    padding-inline: 20px;
 }
 
 .form .form__wrapper {
