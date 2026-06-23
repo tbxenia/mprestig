@@ -4240,6 +4240,11 @@ footer:before {
     line-height: 31px;
 }
 
+.article__headtitle ol > li:before {
+    top: 0;
+    transform: none;
+}
+
 .article__headtitle ol > li > a {
     font-weight: 500;
 }
