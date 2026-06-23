@@ -100,6 +100,14 @@ svg * {
 
 @font-face {
     font-family: 'Unbounded';
+    src: url('../fonts/Unbounded-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Unbounded';
     src: url('../fonts/Unbounded-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
@@ -202,7 +210,6 @@ a[href^=mailto]:hover,
     width: fit-content;
     white-space: nowrap;
     text-align: center;
-    transition: all 0.5s ease-in-out;
 }
 
 .btn:hover,
@@ -472,6 +479,11 @@ body {
     padding-left: 70px;
     font-size: 16px;
     line-height: 24px;
+    font-weight: 400;
+}
+
+.content-page ol > li b {
+    font-weight: 600;
 }
 
 .content-page ol > li:before {
@@ -484,11 +496,27 @@ body {
 	position: absolute;
 	top: 50%;
     transform: translateY(-50%);
-	left: -0;
+	left: 0;
 	width: 30px; 
     height: 30px;
 	color: #62A8B1;
     font-size: 20px;
+    font-weight: 700;
+}
+
+@media(max-width: 576px) {
+    .content-page ol {
+        gap: 17px;
+    }
+
+    .content-page ol > li {
+        padding-left: 49px;
+    }
+
+    .content-page ol > li:before {
+        top: 0;
+        transform: none;
+    }
 }
 
 .content-page a {
@@ -2306,7 +2334,7 @@ footer:before {
 }
 
 .articles__item-title {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 20px;
     line-height: 28px;
 }
@@ -3008,7 +3036,7 @@ footer:before {
     display: flex;
     gap: 15px;
     align-items: center;
-    font-size: 12px;
+    font-size: 16px;
     position: absolute;
     top: 32px;
     right: 25px;
@@ -3044,6 +3072,7 @@ footer:before {
         right: auto;
         margin-top: 22px;
         gap: 23px;
+        font-size: 12px;
     }
 
     .pay__details-download img {
@@ -3778,6 +3807,7 @@ footer:before {
     font-size: 30px;
     line-height: 45px;
     text-transform: uppercase;
+    font-weight: normal;
 }
 
 .contacts__block-title span {
@@ -3788,6 +3818,7 @@ footer:before {
 .contacts__block .contacts__phone,
 .contacts__block .contacts__email {
     font-size: 24px;
+    font-weight: 600;
 }
 
 .contacts__block .scheme {
@@ -3892,6 +3923,10 @@ footer:before {
     font-size: 20px;
 }
 
+.offices__item .contacts__address {
+    font-weight: 400;
+}
+
 .offices__item .contacts__address,
 .offices__item .contacts__email {
     font-size: 16px;
@@ -3899,6 +3934,11 @@ footer:before {
 
 .offices__item .contacts__phone {
     font-size: 20px;
+}
+
+.offices__item .contacts__phone,
+.offices__item .contacts__email {
+    font-weight: 600;
 }
 
 .offices__item .contacts {
@@ -4251,7 +4291,7 @@ footer:before {
 }
 
 .article__info-date b {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .article__info-date.--update {
@@ -4281,15 +4321,16 @@ footer:before {
 
 .article__headtitle ol > li {
     line-height: 31px;
+    font-weight: 600;
+}
+
+.article__headtitle ol ul li {
+    font-weight: 400;
 }
 
 .article__headtitle ol > li:before {
     top: 0;
     transform: none;
-}
-
-.article__headtitle ol > li > a {
-    font-weight: 500;
 }
 
 .article__headtitle a {
@@ -4315,6 +4356,10 @@ footer:before {
 .article__body ol,
 .article__body .text-img {
     margin-bottom: 24px;
+}
+
+.article__body p b {
+    font-weight: 500;
 }
 
 .article__body p:last-child {
@@ -4440,7 +4485,7 @@ footer:before {
     display: flex;
     flex-direction: column;
     gap: 18px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .article__banner-item {
@@ -4453,12 +4498,18 @@ footer:before {
     width: 30px;
 }
 
+.article__banner-item .icon img {
+    max-width: 100%;
+    height: auto;
+}
+
 .article__banner-buttons {
     grid-column-start: 1;
     grid-row-start: 4;
     display: flex;
     align-items: center;
     gap: 25px;
+    font-weight: 700;
 }
 
 .navigation.--articles {
@@ -4468,6 +4519,8 @@ footer:before {
     justify-content: space-between;
     background: #F6F6F6;
     padding: 21px 30px;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .navigation.--articles a {
@@ -4599,6 +4652,18 @@ footer:before {
 }
 
 @media(max-width: 576px) {
+    .article__top {
+        gap: 19px;
+        margin-bottom: 27px;
+    }
+
+    .article__body p,
+    .article__body ul,
+    .article__body ol,
+    .article__body .text-img {
+        margin-bottom: 18px;
+    }
+    
     .article__info-date {
         font-size: 10px;
     }
@@ -4606,10 +4671,22 @@ footer:before {
     .article__headtitle-title {
         font-size: 16px;
         line-height: normal;
+        margin-bottom: 24px;
     }
 
     .article__headtitle {
         font-size: 12px;
+        padding: 18px 18px;
+    }
+
+    .article__headtitle ol > li,
+    .article__headtitle ul > li {
+        font-size: 12px;
+        line-height: normal;
+    }
+
+    .article__headtitle ol > li {
+        padding-left: 53px;
     }
 
     .article__body p,
@@ -4622,6 +4699,9 @@ footer:before {
     .article__body h2 {
         font-size: 16px;
         line-height: 22px;
+        padding: 7px 0;
+        gap: 8px;
+        margin-bottom: 20px;
     }
 
      .article__body h3 {
@@ -4631,11 +4711,13 @@ footer:before {
 
     .article__banner {
         padding: 20px;
+        margin: 38px -21px;
+        row-gap: 25px;
     }
 
     .article__banner-buttons a.btn {
         font-size: 12px;
-        padding: 11px 10px;
+        padding: 6px 20px;
     }
 
     .article__banner-title {
@@ -4651,10 +4733,28 @@ footer:before {
     .article__banner-list {
         font-size: 12px;
         line-height: 32px;
+        gap: 0;
+    }
+    
+    .article__banner-img {
+        max-width: 366px;
+    }
+
+    .article__banner-item {
+        gap: 22px;
+    }
+
+    .article__banner-item .icon {
+        width: 20px;
     }
 
     .navigation.--articles {
         font-size: 12px;
+        padding: 9px 15px;
+    }
+
+    .text-img {
+        gap: 27px;
     }
 }
 
