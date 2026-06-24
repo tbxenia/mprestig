@@ -12,8 +12,13 @@
 		<header>
 			<div class="container header">
 				<div class="header__logo">
-					<a href="/"><img src="./assets/images/logo.svg" alt="Производство сэндвич-панелей"></a>
+					<a href="/" class="logo"><img src="./assets/images/logo.svg" alt="Производство сэндвич-панелей"></a>
 					<div class="header__slogan">Производство сэндвич-панелей</div>
+					<div class="header__phone only-tablet"><a href="tel:+73832304580">+7 (383) 230-45-80</a></div>
+				</div>
+				<div class="header_burger only-tablet" id="burger">
+					<input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+					<label class="burger" for="burger-checkbox"></label>
 				</div>
 				<div class="header__right">
 					<div class="header__info">
@@ -275,7 +280,60 @@
 				</div>
 			</div>
 		</footer>
-
+		<div class="mobile-burger">
+			<div class="mobile-burger__inner">
+				<div class="close"></div>
+					<div class="mobile-burger__top">
+						<div class="mobile-burger__logo">
+							<img src="./assets/images/logo__mobile.svg" alt="Производство сэндвич-панелей">
+						</div>
+						<div class="mobile-burger__city">
+							Новосибирск
+						</div>
+						<div class="mobile-burger__button">
+							<a href="#" class="btn">Обратный звонок</a>
+						</div>
+						<div class="mobile-burger__social">
+							<a href="#"><img src="./assets/images/icons/max.svg" alt="MAX"></a>
+							<a href="#"><img src="./assets/images/icons/tg.svg" alt="TG"></a>
+						</div>
+						<div class="mobile-burger__search">
+							<form>
+								<div class="form-field">
+									<label><input type="search" value="Поиск"></label>
+								</div>
+								<button class="search">Поиск</button>
+							</form>
+						</div>
+					</div>
+					<div class="mobile-burger__menu">
+						<ul>
+							<li><a href="#">Каталог</a></li>
+							<li><a href="#">О компании</a></li>
+							<li><a href="#">Производство</a></li>
+							<li><a href="#">Калькулятор</a></li>
+							<li><a href="#">Наши объекты</a></li>
+							<li><a href="#">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="mobile-burger__contacts contacts">
+						<div class="contacts__phone">
+							<a href="tel:+73832304580">+7 (383) 230-45-80</a>
+						</div>
+						<div class="contacts__email">
+							<a href="mailto:mail5@metall-prestig.ru">mail5@metall-prestig.ru</a>
+						</div>
+						<div class="contacts__address">
+							<p>ул. Омский тракт, 17</p>
+							<p><a href="#">схема проезда</a></p>
+						</div>
+						<div class="contacts__time">
+							Время работы: <b>пн-пт: 8:00 - 17:00</b>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="overlay"></div>
 		<script src="./assets/js/main.js"></script>
 	</body>
 </html>

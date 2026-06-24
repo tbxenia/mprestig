@@ -26,6 +26,42 @@ window.addEventListener('load', mobileFooterMenu);
 window.addEventListener('resize', mobileFooterMenu);
 
 document.addEventListener("DOMContentLoaded", () => {
+	/* burger */
+	
+	const burgerButton = document.getElementById('burger');
+		
+	const menu = document.querySelector('.mobile-burger');
+	const overlay = document.querySelector('.overlay');
+	const body = document.querySelector('body');
+	const close = document.querySelector('.close');
+
+	function addMenu() {
+		menu.classList.add('active');
+		overlay.classList.add('active');
+		body.classList.add('fixed');
+	}
+	
+	function removeMenu() {
+		menu.classList.remove('active');
+		overlay.classList.remove('active');
+		body.classList.remove('fixed');
+	}
+
+	burgerButton.addEventListener('click', function(event) {
+		event.preventDefault();
+		addMenu();
+	});
+
+	document.addEventListener('click', (event) => {
+		if (!menu.contains(event.target) && !burgerButton.contains(event.target)) {
+			removeMenu();
+		}
+	});
+
+	close.addEventListener('click', (event) => {
+		removeMenu();
+	});
+	
 	const headers = document.querySelectorAll('.accordion-header');
 
   headers.forEach(header => {
