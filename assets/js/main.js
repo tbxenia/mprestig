@@ -9,8 +9,8 @@ function mobileFooterMenu() {
 
 			if(lists) {
 				lists.forEach(list => {
-				combinedList.append(...list.querySelectorAll('li'));
-				list.remove();
+				const items = Array.from(list.querySelectorAll('li')).map(li => li.cloneNode(true));
+				combinedList.append(...items);
 				});
 			}
 			
