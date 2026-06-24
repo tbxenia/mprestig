@@ -1,3 +1,30 @@
+function mobileFooterMenu() {
+   if (window.innerWidth <= 767) {
+		const container = document.querySelector('.footer__menu');
+		if(container) {
+			const lists = container.querySelectorAll('ul.only-desktop');
+
+			const combinedList = document.createElement('ul');
+			combinedList.classList.add('mobile-menu');
+
+			if(lists) {
+				lists.forEach(list => {
+				combinedList.append(...list.querySelectorAll('li'));
+				list.remove();
+				});
+			}
+			
+			if(!container.querySelector('.mobile-menu')) {
+				container.appendChild(combinedList);
+			}
+		}
+	}
+}
+
+window.addEventListener('load', mobileFooterMenu);
+
+window.addEventListener('resize', mobileFooterMenu);
+
 document.addEventListener("DOMContentLoaded", () => {
 	const headers = document.querySelectorAll('.accordion-header');
 
@@ -41,25 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				faq.classList.toggle('active');
 			});
 		});
-	}
-
-	if (window.innerWidth <= 767) {
-		const container = document.querySelector('.footer__menu');
-		if(container) {
-			const lists = container.querySelectorAll('ul.only-desktop');
-
-			const combinedList = document.createElement('ul');
-			combinedList.classList.add('mobile-menu');
-
-			if(lists) {
-				lists.forEach(list => {
-				combinedList.append(...list.querySelectorAll('li'));
-				list.remove();
-				});
-			}
-
-			container.appendChild(combinedList);
-		}
 	}
 
 	const articlesBlock = document.querySelector('.articles__list');
