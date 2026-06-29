@@ -5896,3 +5896,26 @@ table.characteristics tr td {
 .about-geography .contacts__address {
     font-weight: 400;
 }
+
+.map::-webkit-scrollbar {
+    height: 3px;
+}
+
+@media(max-width: 576px) {
+    .about-geography .offices__content {
+        margin-left: -150px;
+    }
+
+    img.img-map {
+        width: 1120px;
+    }
+
+    .about-geography .map .pin .city {
+        font-size: 12px;
+    }
+
+    .map {
+        margin-left: -21px;
+        margin-right: -21px;
+    }
+}
