@@ -1171,6 +1171,13 @@ footer:before {
     text-decoration: none;
 }
 
+.contacts__city {
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 0 !important;
+    margin-bottom: 10px;
+}
+
 .contacts__phone {
     font-weight: 700;
     font-size: 18px;
@@ -3118,13 +3125,6 @@ footer:before {
         line-height: 14px;
         padding-inline: 0;
     }
-}
-
-/* map */
-
-.offices__content img {
-    max-width: 100%;
-    height: auto;
 }
 
 /* textblock */
@@ -5652,4 +5652,134 @@ table.characteristics tr td {
 .sidebar .category__list li.has-children.active > ul li.current-menu-item a {
     color: #C12814;
     font-weight: 700;
+}
+
+/* карта */
+
+.about-geography .offices__content {
+    position: relative;
+    height: 100%;
+    width: fit-content;
+}
+.about-geography .map {
+    overflow: auto;
+}
+
+.about-geography .map .pin {
+    position: absolute;
+}
+
+.about-geography .map .pin:hover {
+    text-decoration: underline;
+}
+
+.about-geography .map .pin .city {
+    cursor: pointer;
+    font-family: 'Unbounded';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.about-geography .map .pin .city:before {
+    content: '';
+    background: url('../images/icons/icon_map.svg') no-repeat center center #C12814;
+    width: 26px;
+    height: 26px;
+}
+.about-geography .map .pin.to-right .city:before  {
+    order: 999;
+}
+
+.about-geography .map .pin.pin-1 {
+    top: 66%;
+    left: 49.4%;
+}
+.about-geography .map .pin.pin-2 {
+    top: 70.4%;
+    left: 41%;
+}
+.about-geography .map .pin.pin-3 {
+    top: 76.1%;
+    left: 58.4%;
+}
+.about-geography .map .pin.pin-4 {
+    top: 72.9%;
+    left: 19.2%;
+}
+.about-geography .map .pin.pin-5 {
+    top: 63.1%;
+    left: 34.3%;
+}
+.about-geography .map .pin.pin-6 {
+    top: 57.1%;
+    left: 31.3%;
+}
+.about-geography .map .pin.pin-7 {
+    top: 26.2%;
+    left: 15%;
+}
+.about-geography .map .pin.pin-8 {
+    top: 76%;
+    left: 40.5%;
+}
+.about-geography .map .pin.pin-9 {
+    top: 71.1%;
+    right: 2.5%;
+}
+.about-geography .map .pin .info {
+    display: none;
+    color: #ffffff;
+    position: absolute;
+    bottom: 15px;
+    width: 355px;
+    left: 0;
+    color: var(--color-black);
+    left: 0;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    padding: 25px;
+    z-index: 9;
+}
+
+.about-geography .map .pin.pin-9 .info {
+    left: auto;
+    right: 0;
+}
+
+.about-geography .map .pin.to-right .info {
+    right: 0;
+    left: auto;
+}
+.about-geography .map .pin.to-right .info:before {
+    right: -28px;
+    left: auto;
+}
+.about-geography .map .pin:hover .info {
+    display: flex;
+}
+
+.about-geography .contacts {
+    gap: 15px;
+}
+
+.about-geography .contacts__phone {
+    font-size: 16px;
+}
+
+.about-geography .contacts__address a {
+    color: #C12814;
+    text-decoration: underline;
+}
+
+.about-geography .contacts__address a:hover {
+    text-decoration: none;
+}
+
+.about-geography .contacts__address {
+    font-weight: 400;
 }
