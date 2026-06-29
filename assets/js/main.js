@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 
 			// Переключаем текущую секцию
-			item.classList.toggle('active');
+			item.classList.add('active');
 			});
 		});
 	}
@@ -394,6 +394,25 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	}
+
+	const openCity = document.querySelectorAll('.city-open');
+
+	openCity.forEach((item) => {
+		if(item) {
+			item.addEventListener('click', function(event) {
+				item.querySelector('.cities').classList.add('show');
+			});
+
+			document.addEventListener('click', function(event) {
+				const isClickInside = item.contains(event.target);
+
+				if (!isClickInside) {
+					item.querySelector('.cities').classList.remove('show');
+				}
+			});
+		}
+	});
+
 	const articleBody = document.getElementById('article');
 
 	if(articleBody) {

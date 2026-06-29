@@ -13,8 +13,13 @@
 		<header>
 			<div class="container header">
 				<div class="header__logo">
-					<a href="/"><img src="./assets/images/logo.svg" alt="Производство сэндвич-панелей"></a>
+					<a href="/" class="logo"><img src="./assets/images/logo.svg" alt="Производство сэндвич-панелей"></a>
 					<div class="header__slogan">Производство сэндвич-панелей</div>
+					<div class="header__phone only-tablet"><a href="tel:+73832304580">+7 (383) 230-45-80</a></div>
+				</div>
+				<div class="header_burger only-tablet" id="burger">
+					<input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+					<label class="burger" for="burger-checkbox"></label>
 				</div>
 				<div class="header__right">
 					<div class="header__info">
@@ -441,28 +446,11 @@
 					<h2>Структура сэндвич–панелей</h2>
 				</div>
 				<div class="info__content">
-					<div class="info__main">
-						<div class="info__main-pic">
-							<img src="./assets/images/info_pic.png" alt="Пенополистирол">
-
-							<div class="info__main-help top">
-								<div class="--wrapper clip-small">
-									<div class="--inner clip-small">
-										<img src="./assets/images/icons/icon_doc.svg" alt="help icon 1">
-										Металл 0,5 мм <br>с полимерным покрытием
-									</div>
-								</div>
-							</div>
-
-							<div class="info__main-help bottom">
-								<div class="--wrapper clip-small">
-									<div class="--inner clip-small">
-										<img src="./assets/images/icons/icon_bond.svg" alt="help icon 2">
-									Удобный замок <br>для монтажа
-									</div>
-								</div>
-							</div>
-						</div>
+					<div class="info__main-pic">
+						<picture>
+							<source srcset="./assets/images/material.svg" media="(min-width: 992px)">
+							<img src="./assets/images/material-mobile.svg" alt="Пенополистирол">
+						</picture>
 					</div>
 					<div class="info__materials materials">
 						<div class="materials__item">
@@ -562,7 +550,7 @@
 					</div>
 				</div>
 				<div class="objects-home__content">
-					<div class="objects-home__img">
+					<div class="objects-home__img clip-small">
 						<img src="./assets/images/object.png" alt="Наши объекты">
 					</div>
 					<div class="objects-home__list">
@@ -718,6 +706,9 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="section__more only-mobile">
+					<a href="#">Все статьи</a>
 				</div>
 				<div class="seo">
 					<p>SЕО-текст. Однозначно, тщательные исследования конкурентов освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Лишь предприниматели в сети интернет будут описаны максимально подробно. В рамках спецификации современных стандартов, явные признаки победы институционализации, вне зависимости от их уровня, должны быть преданы социально-демократической анафеме. Как уже неоднократно упомянуто, сделанные на базе интернет-аналитики выводы подвергнуты целой серии независимых исследований. Для современного мира высококачественный прототип будущего проекта способствует повышению качества поэтапного и последовательного развития общества. Идейные соображения высшего порядка, а также повышение уровня гражданского сознания не даёт нам иного выбора, кроме определения системы обучения кадров, соответствующей насущным потребностям.</p>
@@ -912,9 +903,126 @@
 			</section>
 		</main>
 		<footer>
-			FOOTER
+			<div class="container footer">
+				<div class="footer__logo">
+					<a href="/"><img src="./assets/images/logo__footer.svg" alt="Производство сэндвич-панелей"></a>
+				</div>
+				<div class="footer__info">
+					<div class="footer__slogan">Производство и продажа <br>сэндвич-панелей</div>
+					<div class="footer__btn"><a href="#" class="btn --grey">Оставить заявку</a></div>
+				</div>
+				<div class="footer__city">
+					Новосибирск
+				</div>
+				<div class="footer__details">
+					<p><b>ИНН:</b> 5406789441</p>
+					<p><b>ОГРН:</b> 5400000000</p>
+				</div>
+				<div class="footer__contacts contacts">
+					<div class="contacts__phone footer__phone">
+						<a href="tel:+73832304580">+7 (383) 230-45-80</a>
+					</div>
+					<div class="contacts__address footer__address">
+						<p>ул. Омский тракт, 17</p>
+						<p><a href="#">схема проезда</a></p>
+					</div>
+					<div class="contacts__time footer__time">
+						Время работы: <b>пн-пт: 8:00 - 17:00</b>
+					</div>
+					<div class="contacts__email footer__email">
+						<a href="mailto:mail5@metall-prestig.ru">mail5@metall-prestig.ru</a>
+					</div>
+				</div>
+				<div class="footer__menu">
+					<ul class="menu-1 only-desktop">
+						<li><a href="#">Каталог</a></li>
+						<li><a href="#">О компании</a></li>
+						<li><a href="#">Производство</a></li>
+						<li><a href="#">Калькулятор</a></li>
+						<li><a href="#">Наши объекты</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+					<ul class="menu-2 only-desktop">
+						<li><a href="#">Доставка</a></li>
+						<li><a href="#">Оплата</a></li>
+						<li><a href="#">Акции</a></li>
+						<li><a href="#">Сертификаты</a></li>
+						<li><a href="#">Статьи</a></li>
+						<li><a href="#">Вопрос-ответ</a></li>
+					</ul>
+					<ul class="menu-3 only-desktop">
+						<li><a href="#">Отзывы</a></li>
+						<li><a href="#">Реквизиты компании</a></li>
+						<li><a href="#">Нормативно-техническая документация</a></li>
+					</ul>
+					<ul class="menu-4">
+						<li><a href="#">Карта сайта</a></li>
+						<li><a href="#">Политика конфиденциальности</a></li>
+					</ul>
+				</div>
+				<div class="footer__copyright">
+					Copyright (© Металл Престиж, 2015-2026)
+				</div>
+				<div class="footer__links">
+					<a href="#">Согласие на обработку персональных данных</a>
+					<a href="#">Разработка сайта – Альтера</a>
+				</div>
+			</div>
 		</footer>
-
+<div class="mobile-burger">
+			<div class="mobile-burger__inner">
+				<div class="close"></div>
+					<div class="mobile-burger__top">
+						<div class="mobile-burger__logo">
+							<img src="./assets/images/logo__mobile.svg" alt="Производство сэндвич-панелей">
+						</div>
+						<div class="mobile-burger__city">
+							Новосибирск
+						</div>
+						<div class="mobile-burger__button">
+							<a href="#" class="btn">Обратный звонок</a>
+						</div>
+						<div class="mobile-burger__social">
+							<a href="#"><img src="./assets/images/icons/max.svg" alt="MAX"></a>
+							<a href="#"><img src="./assets/images/icons/tg.svg" alt="TG"></a>
+						</div>
+						<div class="mobile-burger__search">
+							<form>
+								<div class="form-field">
+									<label><input type="search" value="Поиск"></label>
+								</div>
+								<button class="search">Поиск</button>
+							</form>
+						</div>
+					</div>
+					<div class="mobile-burger__menu">
+						<ul>
+							<li><a href="#">Каталог</a></li>
+							<li><a href="#">О компании</a></li>
+							<li><a href="#">Производство</a></li>
+							<li><a href="#">Калькулятор</a></li>
+							<li><a href="#">Наши объекты</a></li>
+							<li><a href="#">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="mobile-burger__contacts contacts">
+						<div class="contacts__phone">
+							<a href="tel:+73832304580">+7 (383) 230-45-80</a>
+						</div>
+						<div class="contacts__email">
+							<a href="mailto:mail5@metall-prestig.ru">mail5@metall-prestig.ru</a>
+						</div>
+						<div class="contacts__address">
+							<p>ул. Омский тракт, 17</p>
+							<p><a href="#">схема проезда</a></p>
+						</div>
+						<div class="contacts__time">
+							Время работы: <b>пн-пт: 8:00 - 17:00</b>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="overlay"></div>
 		<script src="./assets/js/swiper-bundle.min.js"></script>
 		<script src="./assets/js/main.js"></script>
 	</body>
