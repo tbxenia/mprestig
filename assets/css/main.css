@@ -3864,7 +3864,7 @@ footer:before {
 .form__right {
     width: 650px;
     background-color: #717171;
-    background-image: url('../images/banner_bg.png');
+    background-image: url('../images/bg_pattern.svg');
     background-repeat: repeat-x;
     background-position: left bottom;
     color: var(--color-white);
