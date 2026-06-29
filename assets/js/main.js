@@ -26,61 +26,97 @@ window.addEventListener('load', mobileFooterMenu);
 window.addEventListener('resize', mobileFooterMenu);
 
 document.addEventListener("DOMContentLoaded", () => {
+	const liHasChildren = document.querySelectorAll('.has-children');
+	if(liHasChildren) {
+		liHasChildren.forEach((item, index) => {
+			const accButton = document.createElement('button');
+			accButton.className = 'acc-button';
+			item.appendChild(accButton)
+			item.addEventListener('click', () => {
+				item.classList.toggle('active');
+			});
+		});
+	}
+
+	const tabButtons = document.querySelectorAll('.tab-item');
+	const tabContents = document.querySelectorAll('.tab-content');
+
+	if(tabButtons) {
+		tabButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				// Убираем active со всех кнопок и контента
+				tabButtons.forEach(btn => btn.classList.remove('active'));
+				tabContents.forEach(content => content.classList.remove('active'));
+
+				// Добавляем active на нажатую кнопку и соответствующий контент
+				button.classList.add('active');
+				const tabNumber = button.getAttribute('data-tab');
+				document.querySelector(`.tab-content[data-tab="${tabNumber}"]`).classList.add('active');
+			});
+		});
+	}
+
 	/* burger */
 	
 	const burgerButton = document.getElementById('burger');
+
+	if(burgerButton) {
 		
-	const menu = document.querySelector('.mobile-burger');
-	const overlay = document.querySelector('.overlay');
-	const body = document.querySelector('body');
-	const close = document.querySelector('.close');
+		const menu = document.querySelector('.mobile-burger');
+		const overlay = document.querySelector('.overlay');
+		const body = document.querySelector('body');
+		const close = document.querySelector('.close');
 
-	function addMenu() {
-		menu.classList.add('active');
-		overlay.classList.add('active');
-		body.classList.add('fixed');
-	}
-	
-	function removeMenu() {
-		menu.classList.remove('active');
-		overlay.classList.remove('active');
-		body.classList.remove('fixed');
-	}
-
-	burgerButton.addEventListener('click', function(event) {
-		event.preventDefault();
-		addMenu();
-	});
-
-	document.addEventListener('click', (event) => {
-		if (!menu.contains(event.target) && !burgerButton.contains(event.target)) {
-			removeMenu();
+		function addMenu() {
+			menu.classList.add('active');
+			overlay.classList.add('active');
+			body.classList.add('fixed');
 		}
-	});
+		
+		function removeMenu() {
+			menu.classList.remove('active');
+			overlay.classList.remove('active');
+			body.classList.remove('fixed');
+		}
 
-	close.addEventListener('click', (event) => {
-		removeMenu();
-	});
+		burgerButton.addEventListener('click', function(event) {
+			event.preventDefault();
+			addMenu();
+		});
+
+		document.addEventListener('click', (event) => {
+			if (!menu.contains(event.target) && !burgerButton.contains(event.target)) {
+				removeMenu();
+			}
+		});
+
+		close.addEventListener('click', (event) => {
+			removeMenu();
+		});
+
+	}
 	
 	const headers = document.querySelectorAll('.accordion-header');
 
-  headers.forEach(header => {
-    header.addEventListener('click', () => {
-      const item = header.parentElement;
-      const accordion = item.parentElement;
-      
-      // Закрываем остальные открытые секции (опционально)
-      const activeItems = accordion.querySelectorAll('.accordion-item.active');
-      activeItems.forEach(activeItem => {
-        if (activeItem !== item) {
-          activeItem.classList.remove('active');
-        }
-      });
+	if(headers) {
+		headers.forEach(header => {
+			header.addEventListener('click', () => {
+			const item = header.parentElement;
+			const accordion = item.parentElement;
+			
+			// Закрываем остальные открытые секции (опционально)
+			const activeItems = accordion.querySelectorAll('.accordion-item.active');
+			activeItems.forEach(activeItem => {
+				if (activeItem !== item) {
+				activeItem.classList.remove('active');
+				}
+			});
 
-      // Переключаем текущую секцию
-      item.classList.toggle('active');
-    });
-  });
+			// Переключаем текущую секцию
+			item.classList.toggle('active');
+			});
+		});
+	}
 
 	const fancyBoxElements = document.querySelectorAll("[data-fancybox]");
 
@@ -148,9 +184,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-	const productsSliderBlock = document.querySelector('.products__slider');
-	if(productsSliderBlock) {
-		const productsSlider = new Swiper(".products__slider.swiper", {
+	const popularProductsSliderBlock = document.querySelector('.popular .products__slider');
+	if(popularProductsSliderBlock) {
+		const popularProductsSlider = new Swiper(".popular .products__slider.swiper", {
 			slidesPerView: 4,
 			slidesPerGroup: 1,
 			loop: true,
@@ -162,8 +198,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				loadOnTransitionStart: true
 			},
 			navigation: {
-				nextEl: '.products__nav .slider__next',
-				prevEl: '.products__nav .slider__prev',
+				nextEl: '.popular .products__nav .slider__next',
+				prevEl: '.popular .products__nav .slider__prev',
 			},
 			pagination: false,
 			/*autoplay: {
@@ -184,6 +220,44 @@ document.addEventListener("DOMContentLoaded", () => {
 				},
 				992: {
 					slidesPerView: 4,
+				},
+			}
+		});
+	}
+
+	const recommendProductsSliderBlock = document.querySelector('.recommend .products__slider');
+	if(recommendProductsSliderBlock) {
+		const recommendProductsSlider = new Swiper(".recommend .products__slider.swiper", {
+			slidesPerView: 3,
+			slidesPerGroup: 1,
+			loop: true,
+			speed: 1200,
+			pagination: false,
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 1,
+				loadOnTransitionStart: true
+			},
+			navigation: {
+				nextEl: '.recommend .products__nav .slider__next',
+				prevEl: '.recommend .products__nav .slider__prev',
+			},
+			pagination: false,
+			/*autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},*/
+			autoplay: false,
+			spaceBetween: 10,
+			breakpoints: {
+				0: {
+					slidesPerView: 'auto',
+				},
+				577: {
+					slidesPerView: 2,
+				},
+				768: {
+					slidesPerView: 3,
 				},
 			}
 		});
