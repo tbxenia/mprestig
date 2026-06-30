@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const articlesSlider = new Swiper(".articles__list.swiper", {
 			slidesPerView: 4,
 			slidesPerGroup: 1,
-			loop: true,
+			loop: false,
 			speed: 1200,
 			pagination: false,
 			lazy: {
@@ -157,8 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				loadOnTransitionStart: true
 			},
 			navigation: {
-				nextEl: '.articles__list .slider__next',
-				prevEl: '.articles__list .slider__prev',
+				nextEl: '.articles__nav .slider__next',
+				prevEl: '.articles__nav .slider__prev',
 			},
 			pagination: false,
 			autoplay: false,

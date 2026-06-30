@@ -284,7 +284,8 @@ a[href^=mailto]:hover,
     color: var(--color-white);
 }
 
-.btn.--white-border:hover {
+.btn.--white-border:hover,
+.btn.--red-border:hover {
     background: #fff;
     color: var(--color-black);
 }
@@ -714,8 +715,8 @@ body {
     justify-content: space-between;
     position: absolute;
     z-index: 9;
-    left: -20px;
-    right: -20px;
+    left: -15px;
+    right: -15px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -2981,6 +2982,10 @@ footer:before {
     height: auto;
 }
 
+.articles__wrapper {
+    position: relative;
+}
+
 .articles__item {
     background: #333333;
     display: flex;
@@ -2998,6 +3003,10 @@ footer:before {
     padding: 0 20px 20px;
     height: 100%;
     justify-content: space-between;
+}
+
+.articles__item-img {
+    position: relative;
 }
 
 .articles__item-img img {
@@ -3041,10 +3050,6 @@ footer:before {
     .articles__item-title {
         font-size: 14px;
         line-height: 20px;
-    }
-
-    .articles__item-img {
-        position: relative;
     }
 
     .articles__item-img:before {
@@ -5497,12 +5502,19 @@ footer:before {
     .text-img {
         gap: 27px;
     }
+
+    .text-img .text img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 
 @media(max-width: 479px) {
     .article__banner-buttons {
         flex-direction: column;
+        width: 100%;
+        max-width: 366px;
     }
 
     .article__banner-buttons a.btn {
