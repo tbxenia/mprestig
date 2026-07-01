@@ -26,6 +26,42 @@ window.addEventListener('load', mobileFooterMenu);
 window.addEventListener('resize', mobileFooterMenu);
 
 document.addEventListener("DOMContentLoaded", () => {
+	const originalFilter = document.getElementById('filter');
+	if(originalFilter) {
+		const clonedFilter = originalFilter.cloneNode(true);
+		clonedFilter.id = 'mobile-filter';
+		document.querySelector('.mobile-filter__inner').appendChild(clonedFilter);
+	}
+
+	const numberSlider = document.querySelectorAll('.number__slider');
+	if(numberSlider) {
+		numberSlider.forEach((item) => {
+			const parentSlider = item.closest('.number-slider__wrapper')
+			const priceInputMin  = parentSlider.querySelector('.min-input');
+			const priceInputMax = parentSlider.querySelector('.max-input');
+			const priceInputs = [priceInputMin, priceInputMax]; 
+
+			if (item && priceInputs) {
+				noUiSlider.create(item, {
+					start: [parseInt(priceInputMin.value), parseInt(priceInputMax.value)],
+					connect: true,
+					range: {
+						'min': parseInt(priceInputMin.dataset.limit),
+						'max': parseInt(priceInputMax.dataset.limit)
+					}
+				});
+				item.noUiSlider.on('update', function (values, handle) {
+					priceInputs[handle].value = parseInt(values[handle]);
+				});
+				priceInputs.forEach(function (input, handle) {
+					input.addEventListener('change', function () {
+						item.noUiSlider.setHandle(handle, this.value);
+					});
+				});	
+			}
+		});
+	}
+
 	const liHasChildren = document.querySelectorAll('.has-children');
 	if(liHasChildren) {
 		liHasChildren.forEach((item, index) => {
@@ -99,13 +135,50 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 
 	}
+
+	const filterButton = document.getElementById('filter-button');
+
+	if(filterButton) {
+		
+		const filterBlock = document.querySelector('.mobile-filter');
+		const overlay = document.querySelector('.overlay');
+		const body = document.querySelector('body');
+		const close = document.querySelector('.mobile-filter .close');
+
+		function addFilter() {
+			filterBlock.classList.add('active');
+			overlay.classList.add('active');
+			body.classList.add('fixed');
+		}
+		
+		function removeFilter() {
+			filterBlock.classList.remove('active');
+			overlay.classList.remove('active');
+			body.classList.remove('fixed');
+		}
+
+		filterButton.addEventListener('click', function(event) {
+			event.preventDefault();
+			addFilter();
+		});
+
+		document.addEventListener('click', (event) => {
+			if (!menu.contains(event.target) && !filterButton.contains(event.target)) {
+				removeFilter();
+			}
+		});
+
+		close.addEventListener('click', (event) => {
+			removeFilter();
+		});
+
+	}
 	
 	const headers = document.querySelectorAll('.accordion-header');
 
 	if(headers) {
 		headers.forEach(header => {
 			header.addEventListener('click', () => {
-
 			const item = header.parentElement;
 			const accordion = item.parentElement;
 
@@ -114,16 +187,21 @@ document.addEventListener("DOMContentLoaded", () => {
 				block: 'start' // выравнивание элемента по верхнему краю
 			});
 			
-			// Закрываем остальные открытые секции (опционально)
-			const activeItems = accordion.querySelectorAll('.accordion-item.active');
-			activeItems.forEach(activeItem => {
-				if (activeItem !== item) {
-				activeItem.classList.remove('active');
-				}
-			});
+
+			if(!item.classList.contains('filter-panel')) {
+				// Закрываем остальные открытые секции (опционально)
+				const activeItems = accordion.querySelectorAll('.accordion-item.active');
+				activeItems.forEach(activeItem => {
+					activeItem.classList.remove('active');
+				});
+			}
 
 			// Переключаем текущую секцию
-			item.classList.add('active');
+			if(item.classList.contains('filter-panel')) {
+				item.classList.toggle('active');
+			} else {
+				item.classList.add('active');
+			}
 			});
 		});
 	}
