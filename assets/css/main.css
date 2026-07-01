@@ -220,7 +220,7 @@ svg * {
     padding: 0;
 }
 
-@media(max-width: 767px) {
+@media(max-width: 576px) {
     .only-desktop {
         display: none !important;
     }
