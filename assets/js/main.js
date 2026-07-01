@@ -184,7 +184,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				nextEl: '.articles__nav .slider__next',
 				prevEl: '.articles__nav .slider__prev',
 			},
-			pagination: false,
+			pagination: {
+				el: ".articles .slider-pagination",
+				type: 'progressbar',
+			},
 			autoplay: false,
 			/*autoplay: {
 				delay: 5000,
@@ -225,7 +228,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				nextEl: '.popular .products__nav .slider__next',
 				prevEl: '.popular .products__nav .slider__prev',
 			},
-			pagination: false,
+			pagination: {
+				el: ".popular .slider-pagination",
+				type: 'progressbar',
+			},
 			/*autoplay: {
 				delay: 5000,
 				disableOnInteraction: false,
