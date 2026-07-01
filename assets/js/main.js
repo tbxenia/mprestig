@@ -38,20 +38,24 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-	const tabButtons = document.querySelectorAll('.tab-item');
-	const tabContents = document.querySelectorAll('.tab-content');
 
-	if(tabButtons) {
-		tabButtons.forEach(button => {
-			button.addEventListener('click', () => {
-				// Убираем active со всех кнопок и контента
-				tabButtons.forEach(btn => btn.classList.remove('active'));
-				tabContents.forEach(content => content.classList.remove('active'));
+	const tabsMain = document.querySelectorAll('.tabs');
+	if(tabsMain) {
+		tabsMain.forEach(main => {
+			const tabButtons = main.querySelectorAll('.tab-item');
+			const tabContents = main.querySelectorAll('.tab-content');
 
-				// Добавляем active на нажатую кнопку и соответствующий контент
-				button.classList.add('active');
-				const tabNumber = button.getAttribute('data-tab');
-				document.querySelector(`.tab-content[data-tab="${tabNumber}"]`).classList.add('active');
+			tabButtons.forEach(button => {
+				button.addEventListener('click', () => {
+					// Убираем active со всех кнопок и контента
+					tabButtons.forEach(btn => btn.classList.remove('active'));
+					tabContents.forEach(content => content.classList.remove('active'));
+
+					// Добавляем active на нажатую кнопку и соответствующий контент
+					button.classList.add('active');
+					const tabNumber = button.getAttribute('data-tab');
+					document.querySelector(`.tab-content[data-tab="${tabNumber}"]`).classList.add('active');
+				});
 			});
 		});
 	}
@@ -101,8 +105,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	if(headers) {
 		headers.forEach(header => {
 			header.addEventListener('click', () => {
+
 			const item = header.parentElement;
 			const accordion = item.parentElement;
+
+			accordion.scrollIntoView({ 
+				behavior: 'smooth', 
+				block: 'start' // выравнивание элемента по верхнему краю
+			});
 			
 			// Закрываем остальные открытые секции (опционально)
 			const activeItems = accordion.querySelectorAll('.accordion-item.active');
