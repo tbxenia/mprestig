@@ -142,6 +142,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	const equipmentBlock = document.querySelector('.equipment');
+	if(equipmentBlock) {
+		const equipmentSlider = new Swiper('.equipment__list', {
+			slidesPerView: 'auto',
+			spaceBetween: 15,
+			breakpoints: {
+				768: {
+					enabled: false,
+					spaceBetween: 0,
+				},
+			}
+		});
+	}
+
 	const articlesBlock = document.querySelector('.articles__list');
 
 	if(articlesBlock) {
