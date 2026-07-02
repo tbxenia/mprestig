@@ -26,6 +26,7 @@ window.addEventListener('load', mobileFooterMenu);
 window.addEventListener('resize', mobileFooterMenu);
 
 document.addEventListener("DOMContentLoaded", () => {
+
 	const originalFilter = document.getElementById('filter');
 	if(originalFilter) {
 		const clonedFilter = originalFilter.cloneNode(true);
@@ -181,13 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			header.addEventListener('click', () => {
 			const item = header.parentElement;
 			const accordion = item.parentElement;
-
-			accordion.scrollIntoView({ 
-				behavior: 'smooth', 
-				block: 'start' // выравнивание элемента по верхнему краю
-			});
 			
-
 			if(!item.classList.contains('filter-panel')) {
 				// Закрываем остальные открытые секции (опционально)
 				const activeItems = accordion.querySelectorAll('.accordion-item.active');
@@ -441,6 +436,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			bannerVideo.play().catch(error => {
 				console.error("Ошибка автовоспроизведения:", error);
 			});
+		});
+
+		bannerVideo.addEventListener('click', () => {
+			console.log('test');
+			buttonPlay.classList.remove('hidden');
+			bannerContent.classList.add('hidden');
+			bannerVideo.pause();
 		});
 	}
 

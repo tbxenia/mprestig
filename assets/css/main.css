@@ -322,7 +322,7 @@ a[href^=mailto]:hover,
 }
 
 .hidden {
-    opacity: 0!important;
+    display: none!important;
 }
 
 :root {
