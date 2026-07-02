@@ -15,8 +15,13 @@
 		<header>
 			<div class="container header">
 				<div class="header__logo">
-					<a href="./index.html"><img src="./assets/images/logo.svg" alt="Производство сэндвич-панелей"></a>
+					<a href="/mprestig/index.html" class="logo"><img src="./assets/images/logo.svg" alt="Производство сэндвич-панелей"></a>
 					<div class="header__slogan">Производство сэндвич-панелей</div>
+					<div class="header__phone only-tablet"><a href="tel:+73832304580">+7 (383) 230-45-80</a></div>
+				</div>
+				<div class="header_burger only-tablet" id="burger">
+					<input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+					<label class="burger" for="burger-checkbox"></label>
 				</div>
 				<div class="header__right">
 					<div class="header__info">
@@ -33,14 +38,31 @@
 					</div>
 					<div class="header__content">
 						<div class="header__block address-search">
-							<div class="header__content-address">
+							<div class="header__content-address city-open">
 								Новосибирск, <b>ул. Омский тракт, 17</b>
+
+								<div class="cities">
+									<div class="cities__inner content-page">
+										<ul>
+											<li class="active"><a href="#">Новосибирск</a></li>
+											<li><a href="#">Иркутск</a></li>
+											<li><a href="#">Красноярск</a></li>
+											<li><a href="#">Тюмень</a></li>
+											<li><a href="#">Улан-Удэ</a></li>
+											<li><a href="#">Воронеж</a></li>
+											<li><a href="#">Саратов</a></li>
+											<li><a href="#">Санкт-Петербург</a></li>
+											<li><a href="#">Иваново</a></li>
+											<li><a href="#">Челябинск</a></li>
+										</ul>
+									</div>
+								</div>
 							</div>
 							<div class="header__content-time">
 								пн-пт: 8:00 - 17:00
 							</div>
 							<div class="header__content-search">
-								<input type="search" value="Поиск">
+								<input type="search" value="Поиск" placeholder="Поиск" name="header__search">
 							</div>
 						</div>
 						<div class="header__block">
