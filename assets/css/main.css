@@ -1285,6 +1285,10 @@ footer:before {
     max-width: 285px;
 }
 
+.footer__menu a:hover {
+    color: var(--color-accent);
+}
+
 .menu-1 {
     grid-column-start: 1;
     grid-row: span 2;
@@ -1335,6 +1339,14 @@ footer:before {
 
 .footer .mobile-menu {
     display: none;
+}
+
+.footer__city {
+    cursor: pointer;
+}
+
+.footer__city:hover {
+    text-decoration: none;
 }
 
 @media(max-width: 1239px) {
@@ -2953,6 +2965,11 @@ footer:before {
     background-clip: padding-box, border-box;
     white-space: nowrap;
     text-decoration: none;
+}
+
+.tags__list a:hover {
+    background-image: linear-gradient(90deg, #FF2A00 0%, #C12814 100%);
+    color: var(--color-white);
 }
 
 @media(max-width: 576px) {
